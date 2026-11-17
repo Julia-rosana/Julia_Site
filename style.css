@@ -1,0 +1,238 @@
+/* ==========================================================
+   Yapay Zeka Rehberi - Ortak Stil Dosyası
+   ========================================================== */
+
+/* ---------- 1. CSS Değişkenleri ---------- */
+:root {
+  --renk-birincil: #6366f1;
+  --renk-birincil-koyu: #4f46e5;
+  --renk-vurgu: #06b6d4;
+  --renk-arka: #f1f5f9;
+  --renk-kart: #ffffff;
+  --renk-metin: #1e293b;
+  --renk-metin-soluk: #64748b;
+  --renk-kenar: #e2e8f0;
+  --renk-menu: #0f172a;
+  --yaricap: 14px;
+  --golge: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --golge-yuksek: 0 12px 28px rgba(99, 102, 241, 0.22);
+  --gecis: 0.25s ease;
+  --maks-genislik: 1100px;
+}
+
+/* ---------- 2. Temel Sıfırlama ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: var(--renk-arka);
+  color: var(--renk-metin);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+.kapsayici {
+  width: 100%;
+  max-width: var(--maks-genislik);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- 3. Üst Menü (Navigation) ---------- */
+.ust-menu {
+  background: var(--renk-menu);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.ust-menu .kapsayici {
+  display: flex;
+  flex-wrap: wrap;          /* Dar ekranda alt satıra geçer */
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.logo span { color: var(--renk-vurgu); }
+
+.menu-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.menu-liste a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: background var(--gecis), color var(--gecis);
+}
+.menu-liste a:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.menu-liste a.aktif { background: var(--renk-birincil); color: #fff; }
+
+/* ---------- 4. Butonlar ---------- */
+.buton {
+  display: inline-block;
+  background: var(--renk-birincil);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  transition: transform var(--gecis), background var(--gecis), box-shadow var(--gecis);
+}
+.buton:hover {
+  background: var(--renk-birincil-koyu);
+  transform: translateY(-2px);
+  box-shadow: var(--golge-yuksek);
+}
+
+/* ---------- 5. Ana Sayfa (Hero) ---------- */
+.hero {
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 0 5.5rem;
+}
+.hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); margin-bottom: 1rem; }
+.hero p { max-width: 640px; margin: 0 auto 2rem; font-size: 1.1rem; opacity: 0.95; }
+.hero .buton { background: #fff; color: var(--renk-birincil-koyu); }
+.hero .buton:hover { background: #eef2ff; }
+
+.bolum { padding: 3rem 0; }
+.bolum h2 { margin-bottom: 1rem; }
+
+/* Özellik kutuları (CSS Grid) */
+.ozellik-izgara {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ---------- 6. Kartlar ---------- */
+.kart {
+  background: var(--renk-kart);
+  border: 1px solid var(--renk-kenar);
+  border-radius: var(--yaricap);
+  padding: 1.5rem;
+  box-shadow: var(--golge);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform var(--gecis), box-shadow var(--gecis);
+}
+.kart:hover { transform: translateY(-4px); box-shadow: var(--golge-yuksek); }
+.kart h3 { font-size: 1.25rem; }
+.kart p { color: var(--renk-metin-soluk); }
+
+.kategori {
+  align-self: flex-start;
+  background: #eef2ff;
+  color: var(--renk-birincil-koyu);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+.senaryo {
+  margin-top: auto;
+  background: var(--renk-arka);
+  border-left: 4px solid var(--renk-vurgu);
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
+
+/* ---------- 7. İçerik Sayfası: Arama ve Izgara ---------- */
+.sayfa-baslik { padding: 2.5rem 0 1rem; }
+.sayfa-baslik p { color: var(--renk-metin-soluk); }
+
+.arama-kutusu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 0.5rem;
+}
+.arama-kutusu input {
+  flex: 1 1 240px;
+  padding: 0.8rem 1.1rem;
+  font-size: 1rem;
+  border: 2px solid var(--renk-kenar);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color var(--gecis);
+}
+.arama-kutusu input:focus { border-color: var(--renk-birincil); }
+.buton-ikincil { background: #475569; }
+.buton-ikincil:hover { background: #334155; box-shadow: none; }
+
+.sonuc-sayaci { color: var(--renk-metin-soluk); margin-bottom: 1.2rem; font-size: 0.95rem; }
+
+.kart-izgara {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.sonuc-yok {
+  text-align: center;
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px dashed #fdba74;
+  border-radius: var(--yaricap);
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* JS ile gizlenen kartlar ve mesajlar */
+.gizli { display: none !important; }
+
+/* ---------- 8. Hakkında Sayfası ---------- */
+.bilgi-tablo { width: 100%; border-collapse: collapse; }
+.bilgi-tablo th, .bilgi-tablo td {
+  text-align: left;
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid var(--renk-kenar);
+}
+.bilgi-tablo th { width: 40%; color: var(--renk-metin-soluk); font-weight: 600; }
+
+/* ---------- 9. Alt Bilgi ---------- */
+.alt-bilgi {
+  background: var(--renk-menu);
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- 10. Mobil Uyum ---------- */
+@media (max-width: 600px) {
+  .ust-menu .kapsayici { justify-content: center; }
+  .hero { padding: 3.5rem 0; }
+  .bilgi-tablo th, .bilgi-tablo td { display: block; width: 100%; }
+  .bilgi-tablo th { border-bottom: none; padding-bottom: 0; }
+}

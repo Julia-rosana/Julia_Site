@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yapay Zeka Rehberi | İçerikler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="ust-menu">
+    <div class="kapsayici">
+      <a href="index.html" class="logo">Yapay Zeka <span>Rehberi</span></a>
+      <nav>
+        <ul class="menu-liste">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="icerikler.html" class="aktif">İçerikler</a></li>
+          <li><a href="hakkinda.html">Hakkında</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="kapsayici">
+    <section class="sayfa-baslik">
+      <h1>Yapay Zeka Araçları</h1>
+      <p>Aşağıdaki araçları başlığa göre arayarak filtreleyebilirsiniz.</p>
+
+      <!-- Arama alanı -->
+      <div class="arama-kutusu">
+        <input type="search" id="aramaInput" placeholder="Araç adı yazın (örn. ChatGPT)" aria-label="Araç ara" autocomplete="off">
+        <button type="button" id="temizleBtn" class="buton buton-ikincil">Temizle</button>
+      </div>
+      <p id="sonucSayaci" class="sonuc-sayaci" aria-live="polite"></p>
+    </section>
+
+    <!-- Kart listesi -->
+    <section class="kart-izgara" id="kartListesi">
+
+      <article class="kart" data-title="ChatGPT">
+        <span class="kategori">Sohbet / Metin</span>
+        <h3>ChatGPT</h3>
+        <p>OpenAI tarafından geliştirilen, sorulara yanıt veren, metin yazan ve özetleyen yapay zeka sohbet asistanı.</p>
+        <div class="senaryo"><strong>Kullanım senaryosu:</strong> Ders notlarını özetletmek veya bir konuyu basitçe açıklatmak.</div>
+      </article>
+
+      <article class="kart" data-title="Midjourney">
+        <span class="kategori">Görsel Üretim</span>
+        <h3>Midjourney</h3>
+        <p>Yazılan tarif metinlerinden (prompt) sanatsal ve yüksek kaliteli görseller üreten yapay zeka aracı.</p>
+        <div class="senaryo"><strong>Kullanım senaryosu:</strong> Sunum veya proje için özgün kapak görseli hazırlamak.</div>
+      </article>
+
+      <article class="kart" data-title="GitHub Copilot">
+        <span class="kategori">Yazılım Geliştirme</span>
+        <h3>GitHub Copilot</h3>
+        <p>Kod editöründe yazdıklarınızı tamamlayan ve kod önerileri sunan yapay zeka programlama yardımcısı.</p>
+        <div class="senaryo"><strong>Kullanım senaryosu:</strong> Bir fonksiyonu yorum satırından otomatik yazdırmak ve hataları bulmak.</div>
+      </article>
+
+      <article class="kart" data-title="Whisper AI">
+        <span class="kategori">Ses / Konuşma</span>
+        <h3>Whisper AI</h3>
+        <p>Ses kayıtlarını yüksek doğrulukla yazıya dönüştüren, çok dilli konuşma tanıma modeli.</p>
+        <div class="senaryo"><strong>Kullanım senaryosu:</strong> Ders veya toplantı kaydının yazılı dökümünü çıkarmak.</div>
+      </article>
+
+      <article class="kart" data-title="Perplexity AI">
+        <span class="kategori">Araştırma / Arama</span>
+        <h3>Perplexity AI</h3>
+        <p>İnternetteki güncel kaynakları tarayıp kaynak göstererek yanıt veren yapay zeka destekli arama motoru.</p>
+        <div class="senaryo"><strong>Kullanım senaryosu:</strong> Ödev araştırmasında güncel ve kaynaklı bilgi toplamak.</div>
+      </article>
+
+    </section>
+
+    <!-- Eşleşme yokken gösterilecek mesaj -->
+    <div id="sonucYok" class="sonuc-yok gizli">Sonuç bulunamadı. Lütfen farklı bir başlık deneyin.</div>
+  </main>
+
+  <footer class="alt-bilgi">© 2025 Yapay Zeka Rehberi — İnternet Tabanlı Programlama Dersi</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
